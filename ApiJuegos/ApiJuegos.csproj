@@ -208,6 +208,7 @@
     <Compile Include="Models\Juegos.cs">
       <DependentUpon>ContextoJuegos.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\leer.cs" />
     <Compile Include="Models\ListaPedidos.cs">
       <DependentUpon>ContextoJuegos.tt</DependentUpon>
     </Compile>
