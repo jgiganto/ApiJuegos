@@ -42,6 +42,7 @@ namespace ApiJuegos.Models
             pedido.IdJuego = idjuego;
             pedido.IdCliente = idcliente;
             pedido.Titulo = juego.Titulo;
+            pedido.Total = juego.Precio;
             contexto.ListaPedidos.Add(pedido);
             contexto.SaveChanges();
         }
