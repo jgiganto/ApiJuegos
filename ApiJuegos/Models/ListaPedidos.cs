@@ -14,11 +14,12 @@ namespace ApiJuegos.Models
     
     public partial class ListaPedidos
     {
-        public int Posicion { get; set; }
+        public int IdPedido { get; set; }
         public Nullable<int> Precio { get; set; }
-        public string Foto { get; set; }
         public Nullable<System.DateTime> Fecha { get; set; }
-        public int IdCliente { get; set; }
+        public Nullable<int> IdCliente { get; set; }
         public string Titulo { get; set; }
+        public Nullable<int> IdJuego { get; set; }
+        public Nullable<int> Total { get; set; }
     }
 }

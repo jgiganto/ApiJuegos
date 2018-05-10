@@ -27,14 +27,15 @@
         </EntityType>
         <EntityType Name="ListaPedidos">
           <Key>
-            <PropertyRef Name="Posicion" />
+            <PropertyRef Name="IdPedido" />
           </Key>
-          <Property Name="Posicion" Type="int" Nullable="false" />
+          <Property Name="IdPedido" Type="int" Nullable="false" />
           <Property Name="Precio" Type="int" />
-          <Property Name="Foto" Type="nvarchar" MaxLength="50" />
           <Property Name="Fecha" Type="datetime" />
-          <Property Name="IdCliente" Type="int" Nullable="false" />
+          <Property Name="IdCliente" Type="int" />
           <Property Name="Titulo" Type="nvarchar" MaxLength="50" />
+          <Property Name="IdJuego" Type="int" />
+          <Property Name="Total" Type="int" />
         </EntityType>
         <EntityType Name="Pedidos">
           <Key>
@@ -79,14 +80,15 @@
         </EntityType>
         <EntityType Name="ListaPedidos">
           <Key>
-            <PropertyRef Name="Posicion" />
+            <PropertyRef Name="IdPedido" />
           </Key>
-          <Property Name="Posicion" Type="Int32" Nullable="false" />
+          <Property Name="IdPedido" Type="Int32" Nullable="false" />
           <Property Name="Precio" Type="Int32" />
-          <Property Name="Foto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Fecha" Type="DateTime" Precision="3" />
-          <Property Name="IdCliente" Type="Int32" Nullable="false" />
+          <Property Name="IdCliente" Type="Int32" />
           <Property Name="Titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IdJuego" Type="Int32" />
+          <Property Name="Total" Type="Int32" />
         </EntityType>
         <EntityType Name="Pedidos">
           <Key>
@@ -135,12 +137,13 @@
           <EntitySetMapping Name="ListaPedidos">
             <EntityTypeMapping TypeName="TiendaGamesModel.ListaPedidos">
               <MappingFragment StoreEntitySet="ListaPedidos">
-                <ScalarProperty Name="Posicion" ColumnName="Posicion" />
+                <ScalarProperty Name="IdPedido" ColumnName="IdPedido" />
                 <ScalarProperty Name="Precio" ColumnName="Precio" />
-                <ScalarProperty Name="Foto" ColumnName="Foto" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
                 <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
                 <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+                <ScalarProperty Name="IdJuego" ColumnName="IdJuego" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

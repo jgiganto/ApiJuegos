@@ -28,18 +28,21 @@ namespace ApiJuegos.Models
             return consulta.FirstOrDefault();
         }
 
-        public void Comprar(List<int> juegoscomprados,int idcliente,int idjuego)
+        public void Comprar(int idcliente,int idjuego)
         {
-            foreach(var idjuegos in juegoscomprados)
-            {
-                Pedidos pedido = new Pedidos();
-                pedido.IdCliente = idcliente;
-                pedido.Cantidad = 1;
-                pedido.Fecha = DateTime.Now;
-                Juegos juego = GetJuego(idjuego);
-                pedido.Precio = juego.Precio;
-                contexto.Pedidos.Add(pedido);                
-            }
+            var consulta = from datos in contexto.ListaPedidos
+                           select datos;
+            int max = consulta.Count() + 1;
+            ListaPedidos pedido = new ListaPedidos();
+            Juegos juego = this.GetJuego(idjuego);
+
+            pedido.IdPedido = max;
+            pedido.Precio = juego.Precio;
+            pedido.Fecha = DateTime.Now;
+            pedido.IdJuego = idjuego;
+            pedido.IdCliente = idcliente;
+            pedido.Titulo = juego.Titulo;
+            contexto.ListaPedidos.Add(pedido);
             contexto.SaveChanges();
         }
 

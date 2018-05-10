@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\MCSD2017\Documents\Visual Studio 2017\Projects\ESTUDIO\ApiJuegos\ApiJuegos\Models\ContextoJuegos.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\je\Source\Repos\ApiJuegos\ApiJuegos\Models\ContextoJuegos.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

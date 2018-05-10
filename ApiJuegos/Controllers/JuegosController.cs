@@ -30,10 +30,10 @@ namespace ApiJuegos.Controllers
         }
 
         [HttpPost]
-        [Route("api/Comprar/{juegoscomprados}/{idcliente}/{idjuego}")]
-        public void Comprar(List<int> juegoscomprados, int idcliente, int idjuego)
+        [Route("api/Comprar/{idcliente}/{idjuego}")]
+        public void Comprar( int idcliente, int idjuego)
         {
-            this.modelo.Comprar(juegoscomprados, idcliente, idjuego);
+            this.modelo.Comprar(idcliente, idjuego);
         }
 
         [HttpGet]
