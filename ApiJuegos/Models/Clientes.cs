@@ -14,7 +14,7 @@ namespace ApiJuegos.Models
     
     public partial class Clientes
     {
-        public int IdUsuario { get; set; }
+        public int IdCliente { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string Login { get; set; }

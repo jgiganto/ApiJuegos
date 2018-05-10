@@ -7,7 +7,7 @@ namespace ApiJuegos.Models
 {
     public class leer
     {//borrame Falta Meter nugets. Ver docs 18,19,24. 
-       // adminsql Tajamar123
+     // adminsql Tajamar123 ContextoJuegos
 
     }
 }

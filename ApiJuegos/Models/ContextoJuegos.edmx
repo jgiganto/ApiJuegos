@@ -7,21 +7,21 @@
       <Schema Namespace="TiendaGamesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Clientes">
           <Key>
-            <PropertyRef Name="IdUsuario" />
+            <PropertyRef Name="IdCliente" />
           </Key>
-          <Property Name="IdUsuario" Type="int" Nullable="false" />
-          <Property Name="Nombre" Type="nchar" MaxLength="10" />
-          <Property Name="Apellido" Type="nchar" MaxLength="10" />
-          <Property Name="Login" Type="nchar" MaxLength="10" />
-          <Property Name="Pass" Type="nchar" MaxLength="10" />
+          <Property Name="IdCliente" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+          <Property Name="Apellido" Type="nvarchar" MaxLength="50" />
+          <Property Name="Login" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pass" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Juegos">
           <Key>
             <PropertyRef Name="IdJuego" />
           </Key>
           <Property Name="IdJuego" Type="int" Nullable="false" />
-          <Property Name="Titulo" Type="nchar" MaxLength="10" />
-          <Property Name="Foto" Type="nchar" MaxLength="10" />
+          <Property Name="Titulo" Type="nvarchar(max)" />
+          <Property Name="Foto" Type="nvarchar(max)" />
           <Property Name="Argumento" Type="nvarchar(max)" />
           <Property Name="Precio" Type="int" />
         </EntityType>
@@ -31,10 +31,10 @@
           </Key>
           <Property Name="Posicion" Type="int" Nullable="false" />
           <Property Name="Precio" Type="int" />
-          <Property Name="Foto" Type="nchar" MaxLength="10" />
+          <Property Name="Foto" Type="nvarchar" MaxLength="50" />
           <Property Name="Fecha" Type="datetime" />
           <Property Name="IdCliente" Type="int" Nullable="false" />
-          <Property Name="Titulo" Type="nchar" MaxLength="10" />
+          <Property Name="Titulo" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Pedidos">
           <Key>
@@ -59,40 +59,38 @@
       <Schema Namespace="TiendaGamesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Clientes">
           <Key>
-            <PropertyRef Name="IdUsuario" />
+            <PropertyRef Name="IdCliente" />
           </Key>
-          <Property Name="IdUsuario" Type="Int32" Nullable="false" />
-          <Property Name="Nombre" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Apellido" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Login" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Pass" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="IdCliente" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Juegos">
           <Key>
             <PropertyRef Name="IdJuego" />
           </Key>
           <Property Name="IdJuego" Type="Int32" Nullable="false" />
-          <Property Name="Titulo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Foto" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Titulo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Foto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Argumento" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Precio" Type="Int32" />
         </EntityType>
         <EntityType Name="ListaPedidos">
           <Key>
             <PropertyRef Name="Posicion" />
-            <PropertyRef Name="IdCliente" />
           </Key>
           <Property Name="Posicion" Type="Int32" Nullable="false" />
           <Property Name="Precio" Type="Int32" />
-          <Property Name="Foto" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Foto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Fecha" Type="DateTime" Precision="3" />
           <Property Name="IdCliente" Type="Int32" Nullable="false" />
-          <Property Name="Titulo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Pedidos">
           <Key>
             <PropertyRef Name="IdCliente" />
-            <PropertyRef Name="IdJuego" />
           </Key>
           <Property Name="IdCliente" Type="Int32" Nullable="false" />
           <Property Name="IdJuego" Type="Int32" Nullable="false" />
@@ -115,7 +113,7 @@
           <EntitySetMapping Name="Clientes">
             <EntityTypeMapping TypeName="TiendaGamesModel.Clientes">
               <MappingFragment StoreEntitySet="Clientes">
-                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Apellido" ColumnName="Apellido" />
                 <ScalarProperty Name="Login" ColumnName="Login" />
